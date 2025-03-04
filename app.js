@@ -13,9 +13,24 @@ refactorCsv.forEach((line) => {
 })
 console.log(newArr)
 
-// part 3: transforming data
 
-// for(item of newArr) {
-//     console.log(item)
-// }
+
+// part 3: transforming data
+let headings = newArr[0]
+let refactoredArray = []
+
+for (let i = 1; i < newArr.length; i++) {
+    const row = newArr[i];
+    const obj = {};
+  
+    // loop through each column in the row and map it to the corresponding heading
+    for (let j = 0; j < headings.length; j++) {
+        // convert the heading to lowercase and assign the value from the row
+        obj[headings[j]] = row[j];
+    }
+  
+    refactoredArray.push(obj);
+}
+
+console.log(refactoredArray)
 
