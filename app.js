@@ -11,7 +11,7 @@ refactorCsv.forEach((line) => {
     // split each line by comma, and add it to new array.
     newArr.push(line.split(","))
 })
-console.log(newArr)
+console.log("PART 2: \n\n", newArr)
 
 
 
@@ -26,11 +26,31 @@ for (let i = 1; i < newArr.length; i++) {
     // loop through each column in the row and map it to the corresponding heading
     for (let j = 0; j < headings.length; j++) {
         // convert the heading to lowercase and assign the value from the row
-        obj[headings[j]] = row[j];
+        obj[headings[j].toLowerCase()] = row[j];
     }
   
     refactoredArray.push(obj);
 }
 
-console.log(refactoredArray)
+console.log("PART 3: \n\n", refactoredArray)
 
+
+
+// part 4
+
+// remove last element from refactored array
+// console.log(refactoredArray)
+refactoredArray.pop()
+console.log("PART 4.1: \n\n", refactoredArray)
+
+// add new object to end of array
+let bilbo = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+refactoredArray.push(bilbo)
+console.log("PART 4.2: \n\n", refactoredArray)
+
+
+// add new object to beginning of array
+let barry = { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+let factoredArrayCopy = [barry, ...refactoredArray]
+
+console.log("PART 4.3: \n\n", factoredArrayCopy)
